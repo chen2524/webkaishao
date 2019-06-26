@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+	<style>
+		#begin{background:#f0f;}
+		#end{background:#00f;}
+        #name{background:#f00}
+	</style>
+ </head>
+ <body>
+ <center>
+<button id='begin'>开始点名</button>
+<button id='end'>结束点名</button><br><hr>
+<a href="http://www.baidu.com"><button id='name' style='width:200px;height:200px;'></button></a>
+</center>
+<script>
+	window.onload=function(){
+		var begin=document.getElementById('begin');
+		var end=document.getElementById('end');
+		var name=document.getElementById('name');
+		var timer=null;
+		var nameArr=['','刘志祥','李石浩','罗平','汤盛','喻韶','秦泽','朱淑美','唐漫','帅哥',
+    '刘仙女','向津池','陈章凯','黎篱','肖洋','罗琼泉','康恒杰','聂慰祖','陶铸','邱纪杰'];
+		name.innerText=nameArr[0];
+		begin.onclick=function(){
+		clearInterval (timer);
+		timer=setInterval(function(){
+			var s_index=parseInt(Math.random()*nameArr.length);
+			var s_name=nameArr[s_index];
+			name.innerText=s_name;
+		});
+		};
+		end.onclick=function(){
+			clearInterval(timer);
+		}
+	}
+</script>
+ </body>
+</html>
